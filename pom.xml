@@ -14,20 +14,21 @@
 
     <modules>
         <module>spring-boot-hello</module>
+        <module>nacos-spring-demo</module>
     </modules>
     <!--alibaba nexus-->
     <repositories>
-            <repository>
-                <id>alimaven</id>
-                <name>Maven Aliyun Mirror</name>
-                <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
-                <releases>
-                    <enabled>true</enabled>
-                </releases>
-                <snapshots>
-                    <enabled>false</enabled>
-                </snapshots>
-            </repository>
+        <repository>
+            <id>alimaven</id>
+            <name>Maven Aliyun Mirror</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <build>
         <plugins>
