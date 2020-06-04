@@ -1,4 +1,4 @@
-package cn.xutingyin.springbootmybatis.utils;
+package cn.xutingyin.mybatis.utils;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
