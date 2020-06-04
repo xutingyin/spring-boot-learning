@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xutingyin.mybatisplus.mapper.StudentMapper">
+    <select id="listStudentScore" resultType="cn.xutingyin.mybatisplus.entity.StudentDto">
+          SELECT
+            stu.id AS studentId,
+            stu.`name` AS studentName,
+            sc.cource_id AS courseId,
+            sc.score as score,
+            c.`name` AS courseName
+        FROM
+            student stu
+            LEFT JOIN score sc ON stu.id = sc.student_id
+            LEFT JOIN course c ON sc.cource_id = c.id
+    </select>
+</mapper>
