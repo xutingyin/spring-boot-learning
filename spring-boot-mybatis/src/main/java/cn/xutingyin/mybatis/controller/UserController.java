@@ -25,6 +25,7 @@ public class UserController {
         page.setCurrentPage(1);
         page.setShowCount(3);
         userDto.setPage(page);
+        // 这里进行查询后，UserDto 中的Page 对象会被重新赋值，就可以拿到总记录数
         List<User> users = userMapper.listPageUser(userDto);
         // List<User> users2 = userMapper.listUserByPage(1, 3);
         // List<User> users = userMapper.listUserByPage(1, 3);
