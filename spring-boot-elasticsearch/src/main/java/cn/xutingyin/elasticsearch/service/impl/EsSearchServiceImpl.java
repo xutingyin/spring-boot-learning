@@ -26,10 +26,7 @@ import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.common.text.Text;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.MatchQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.TermQueryBuilder;
+import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.FetchSourceContext;
@@ -198,6 +195,58 @@ public class EsSearchServiceImpl implements EsSearchService {
         MatchQueryBuilder matchQueryBuilder =
             QueryBuilders.matchQuery(content.firstKey(), content.get(content.firstKey()));
         sourceBuilder.query(matchQueryBuilder);
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+        // 获取多少条数据
+        sourceBuilder.size(size);
+        // 从第几行开始
+        sourceBuilder.from(from);
+        // 是否要高亮
+        if (ishigh) {
+            HighlightBuilder highlightBuilder = new HighlightBuilder();
+            // 设置高亮的属性
+            highlightBuilder.field(content.firstKey());
+            // 也可以自定义高亮的样式,这里我使用的是默认的方式
+            sourceBuilder.highlighter(highlightBuilder);
+        }
+        // 将查询条件放入需要查询中
+        searchRequest.source(sourceBuilder);
+
+        // 获取相应的数据
+        SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
+        SearchHit[] hits = searchResponse.getHits().getHits();
+
+        ArrayList<Map<String, Object>> result = new ArrayList<>();
+        for (SearchHit searchHit : hits) {
+            Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
+            // 获取高亮的信息
+            HighlightField property = highlightFields.get(content.firstKey());
+            // 查询的元素数据(没有高亮)
+            Map<String, Object> sourceAsMap = searchHit.getSourceAsMap();
+            if (ishigh) {
+                if (property != null) {
+                    Text[] fragments = property.fragments();
+                    String n_title = "";
+                    for (Text text : fragments) {
+                        n_title += text;
+                    }
+                    sourceAsMap.put(content.firstKey(), n_title);
+                }
+            }
+            result.add(sourceAsMap);
+        }
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> fuzzyQuery(String index, TreeMap<String, Object> content, int size, int from,
+        boolean ishigh) throws IOException {
+        SearchRequest searchRequest = new SearchRequest(index);
+        // 构建查询条件
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        // 查询条件
+        FuzzyQueryBuilder fuzzyQueryBuilder =
+            QueryBuilders.fuzzyQuery(content.firstKey(), content.get(content.firstKey()));
+        sourceBuilder.query(fuzzyQueryBuilder);
         sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
         // 获取多少条数据
         sourceBuilder.size(size);

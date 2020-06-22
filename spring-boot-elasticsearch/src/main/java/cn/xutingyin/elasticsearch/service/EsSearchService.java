@@ -115,6 +115,9 @@ public interface EsSearchService {
     List<Map<String, Object>> matchQuery(String index, TreeMap<String, Object> content, int size, int from,
         boolean ishigh) throws IOException;
 
+    List<Map<String, Object>> fuzzyQuery(String index, TreeMap<String, Object> content, int size, int from,
+        boolean ishigh) throws IOException;
+
     /**
      * 多条件match查询 并且是查的是并集(形如where name = 'zhan' and age = 12)
      * 
