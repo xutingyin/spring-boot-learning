@@ -20,6 +20,9 @@ public class Send {
             String message = "Hello World!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
+            // 关闭频道和连接 -- 这里使用了 try resource 会自动帮我们关闭
+//            channel.close();
+//            connection.close();
         }
     }
 }
