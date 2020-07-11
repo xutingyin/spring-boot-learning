@@ -1,4 +1,4 @@
-package cn.xutingyin.rocketmq.server;
+package cn.xutingyin.rocketmq.consumer;
 
 import java.io.UnsupportedEncodingException;
 

@@ -1,4 +1,4 @@
-package cn.xutingyin.rocketmq.server;
+package cn.xutingyin.rocketmq.producer;
 
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
@@ -8,7 +8,7 @@ import cn.xutingyin.rocketmq.config.JmsConfig;
 
 @Component
 public class Producer {
-    private String producerGroup = "test_producer";
+    private String producerGroup = "producer_group";
     private DefaultMQProducer producer;
 
     public Producer() {

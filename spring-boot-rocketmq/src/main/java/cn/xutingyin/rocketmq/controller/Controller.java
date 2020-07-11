@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.xutingyin.rocketmq.config.JmsConfig;
-import cn.xutingyin.rocketmq.server.Producer;
+import cn.xutingyin.rocketmq.producer.Producer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
