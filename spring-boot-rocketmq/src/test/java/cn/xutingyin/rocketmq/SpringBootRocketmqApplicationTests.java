@@ -28,6 +28,14 @@ class SpringBootRocketmqApplicationTests {
     @Autowired
     private Producer producer;
 
+    /**
+     * 单向发送消息
+     * 
+     * @throws RemotingException
+     * @throws MQClientException
+     * @throws InterruptedException
+     * @throws UnsupportedEncodingException
+     */
     @Test
     void sendOneWay() throws RemotingException, MQClientException, InterruptedException, UnsupportedEncodingException {
         for (int i = 0; i < 100; i++) {
@@ -42,6 +50,11 @@ class SpringBootRocketmqApplicationTests {
         Thread.sleep(5000);
     }
 
+    /**
+     * 可靠异步发送消息
+     * 
+     * @throws InterruptedException
+     */
     @Test
     void asyncProducer() throws InterruptedException {
         int messageCount = 100;
@@ -72,6 +85,15 @@ class SpringBootRocketmqApplicationTests {
         countDownLatch.await(5, TimeUnit.SECONDS);
     }
 
+    /**
+     * 可靠同步发送消息 原理：同步发送是指消息发送方发出数据后，会在收到接收方发回响应之后才发下一个数据包的通讯方式。
+     * 
+     * @throws InterruptedException
+     * @throws RemotingException
+     * @throws MQClientException
+     * @throws MQBrokerException
+     * @throws UnsupportedEncodingException
+     */
     @Test
     void syncProducer() throws InterruptedException, RemotingException, MQClientException, MQBrokerException,
         UnsupportedEncodingException {
