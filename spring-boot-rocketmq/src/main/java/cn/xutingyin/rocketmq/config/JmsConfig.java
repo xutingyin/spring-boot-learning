@@ -9,5 +9,15 @@ public class JmsConfig {
      * 主题名称 主题一般是服务器设置好 而不能在代码里去新建topic（ 如果没有创建好，生产者往该主题发送消息 会报找不到topic错误） -- 可以的，设置参数 autoCreateTopicEnable=true
      * 便可以自动创建Topic
      */
+
+    /**
+     * 消费者组
+     */
+    public static final String PRODUCER_GROUP = "producer_group";
+
     public static final String TOPIC = "topic_family";
+    public static final String TOPIC_SYNC = "topic_sysnc";
+    public static final String TOPIC_ASYNC = "topic_async";
+    public static final String TOPIC_ONEWAY = "topic_oneway";
+    public static final String TOPIC_TRANS = "topic_trans";
 }
