@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://10.1.20.11:3306/wypt_xuty?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://10.1.20.11:3306/wypt_xuty?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: JJ_passwd@2017
     driver-class-name: com.mysql.cj.jdbc.Driver
