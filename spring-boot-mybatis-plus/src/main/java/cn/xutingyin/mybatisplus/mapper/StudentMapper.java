@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
+import cn.xutingyin.mybatisplus.entity.Student;
 import cn.xutingyin.mybatisplus.entity.StudentDto;
 
 /**
@@ -20,4 +21,5 @@ public interface StudentMapper extends BaseMapper<StudentMapper> {
 
     IPage<StudentDto> listStudentScore(Page<StudentDto> page);
 
+    void addUser(Student student);
 }

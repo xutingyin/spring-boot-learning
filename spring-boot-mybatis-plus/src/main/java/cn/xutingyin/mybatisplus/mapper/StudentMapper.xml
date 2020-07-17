@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.xutingyin.mybatisplus.mapper.StudentMapper">
+    <insert id="addUser">
+        insert student(`id`,`name`,`age`,`sex`,`create_time`)
+        values (#{id},#{name},#{age},#{sex},#{createTime})
+    </insert>
     <select id="listStudentScore" resultType="cn.xutingyin.mybatisplus.entity.StudentDto">
           SELECT
             stu.id AS studentId,
