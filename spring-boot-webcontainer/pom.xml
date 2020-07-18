@@ -56,13 +56,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
+                <!--这里还需要添加maven插件，devtools才能生效-->
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--fork = true 代表容器将创建一个新的JVM来运行编译器，这样做隔离性比较好。但缺点是每次启动时会慢点-->
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>

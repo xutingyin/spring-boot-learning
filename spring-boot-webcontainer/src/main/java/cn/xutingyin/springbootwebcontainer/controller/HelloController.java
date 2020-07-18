@@ -12,11 +12,8 @@ public class HelloController {
     @RequestMapping("hello")
     public String sayHello() {
         StringBuilder msg = new StringBuilder();
-        // String msg = "";
-        for (int i = 0; i < 10000; i++) {
-
-            msg.append(" hello " + LocalDateTime.now() + "==" + i);
-            // msg = msg + "" + i;
+        for (int i = 0; i < 10; i++) {
+            msg.append(" dddd " + LocalDateTime.now() + "==" + i);
         }
         return msg.toString();
     }

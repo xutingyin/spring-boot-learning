@@ -1,8 +1,12 @@
 server:
-  port: 8899
+  port: 8888
   undertow:
     accesslog:
       enabled: false
     io-threads: 4
     worker-threads: 20
     direct-buffers: true
+spring:
+  devtools:
+    restart:
+      enabled: true
