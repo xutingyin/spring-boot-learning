@@ -1,0 +1,12 @@
+server:
+  port: 8887
+  undertow:
+    accesslog:
+      enabled: false
+    direct-buffers: true
+spring:
+  devtools:
+    restart:
+      enabled: true
+# debug:true可以看到springboot 自动为我们配置了哪些；类
+debug: off
