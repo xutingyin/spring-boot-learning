@@ -1,15 +1,16 @@
 server:
-  port: 8083
+  port: 8081
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.1.5.81:3306/db_account?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://10.1.5.81:3306/db_storage?useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
+
 seata:
   enabled: true
-  application-id: account-service
+  application-id: storage-service
   tx-service-group: my_test_tx_group
   #enable-auto-data-source-proxy: true
   #use-jdk-proxy: false
@@ -59,7 +60,7 @@ seata:
     compressor: none
     enable-client-batch-send-request: true
   config:
-    type: file
+    type: zk
     consul:
       server-addr: 10.1.5.81:8500
     apollo:
@@ -75,11 +76,11 @@ seata:
     zk:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
-      connect-timeout: 2000
+      connect-timeout: 5000
       username: ""
       password: ""
   registry:
-    type: file
+    type: zk
     consul:
       cluster: default
       server-addr: 10.1.5.81:8500
@@ -112,6 +113,6 @@ seata:
       cluster: default
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
-      connect-timeout: 2000
+      connect-timeout: 5000
       username: ""
       password: ""

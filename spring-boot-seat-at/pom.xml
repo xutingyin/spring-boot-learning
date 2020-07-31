@@ -28,12 +28,6 @@
         <zkclient.version></zkclient.version>
     </properties>
     <dependencies>
-        <!--公共服务-->
-        <dependency>
-            <groupId>cn.xutingyin</groupId>
-            <artifactId>common-service</artifactId>
-            <version>1.0.1-RELEASE</version>
-        </dependency>
         <!--dubbo-->
         <!--dubbo依赖-->
         <dependency>

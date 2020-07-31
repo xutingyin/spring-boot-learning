@@ -8,28 +8,39 @@
         <version>1.0.1-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
     <artifactId>order-service</artifactId>
     <packaging>jar</packaging>
+
     <name>order-service</name>
     <description>Demo project for Spring Boot</description>
-
     <dependencies>
         <dependency>
             <groupId>cn.xutingyin</groupId>
             <artifactId>common-service</artifactId>
+            <version>1.0.1-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.2</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+            <version>8.0.20</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -38,6 +49,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.7.RELEASE</version>
             </plugin>
         </plugins>
     </build>

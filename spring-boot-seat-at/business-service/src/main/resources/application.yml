@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8084
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -9,9 +9,9 @@ spring:
     password: 123456
 seata:
   enabled: true
-  application-id: account-service
+  application-id: business-service
   tx-service-group: my_test_tx_group
-  #enable-auto-data-source-proxy: true
+  enable-auto-data-source-proxy: true
   #use-jdk-proxy: false
   client:
     rm:
