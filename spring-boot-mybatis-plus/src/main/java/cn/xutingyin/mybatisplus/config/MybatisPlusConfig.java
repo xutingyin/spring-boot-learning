@@ -1,6 +1,5 @@
 package cn.xutingyin.mybatisplus.config;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -10,7 +9,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParser
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("cn.xutingyin.mybatisplus.mapper")
 public class MybatisPlusConfig {
 
     /**

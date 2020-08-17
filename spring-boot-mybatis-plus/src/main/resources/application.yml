@@ -3,12 +3,22 @@ server:
 spring:
   datasource:
     # serverTimezone 需要设置为 GMT+8 即为北京时间(东八区，以GMT相差8小时，%2B 为 + 号的转义符)
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://10.1.20.11:3306/wypt_xuty?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&useSSL=true
     username: root
     password: JJ_passwd@2017
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
 # mybatis-plus
 mybatis-plus:
   configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
