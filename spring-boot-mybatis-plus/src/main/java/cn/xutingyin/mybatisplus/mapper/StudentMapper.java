@@ -1,6 +1,7 @@
 package cn.xutingyin.mybatisplus.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -15,7 +16,8 @@ import cn.xutingyin.mybatisplus.entity.StudentDto;
  * @Date: 2019/11/11 16:32
  */
 @Mapper
-public interface StudentMapper extends BaseMapper<StudentDto> {
+@Component
+public interface StudentMapper extends BaseMapper<Student> {
 
     IPage<StudentDto> listStudentScore(Page<StudentDto> page);
 

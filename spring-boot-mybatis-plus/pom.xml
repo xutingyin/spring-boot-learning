@@ -49,6 +49,17 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.70</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -64,7 +75,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.xml</include>
-                    <include>**/*.yaml</include>
+                    <include>**/*.yml</include>
                 </includes>
             </resource>
         </resources>
