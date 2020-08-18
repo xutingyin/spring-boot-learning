@@ -36,8 +36,19 @@ public class StudentController {
     }
 
     @GetMapping("/all")
-    public String queryAll() {
+    public List<Student> queryAll() {
         List<Student> students = studentMapper.selectList(null);
-        return JSON.toJSON(students).toString();
+        return students;
+    }
+
+    /**
+     * 这个方法的目的就是用于测试 LocalDateTime 类型的字段看返回是否正常，是否格式中带有 T
+     * 
+     * @return
+     */
+    @GetMapping("/all2")
+    public String queryAll2() {
+        List<Student> students = studentMapper.selectList(null);
+        return JSON.toJSONString(students);
     }
 }
