@@ -4,7 +4,7 @@ spring:
   datasource:
     # serverTimezone 需要设置为 GMT+8 即为北京时间(东八区，以GMT相差8小时，%2B 为 + 号的转义符)
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mword?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/mworld?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&useSSL=true
     username: root
     password: 123456
 
@@ -13,3 +13,4 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,12 +1,12 @@
 package cn.xutingyin.mybatisplus.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 
-//@EnableTransactionManagement
-//@Configuration
+@Configuration
 public class MybatisPlusConfig {
 
     /**

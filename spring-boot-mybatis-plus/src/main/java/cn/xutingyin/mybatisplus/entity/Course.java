@@ -15,16 +15,20 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.Data;
 
 @Data
-@TableName("student")
-public class Student implements Serializable {
+@TableName("course")
+public class Course implements Serializable {
     @TableId(type = IdType.ASSIGN_UUID)
     private String id;
-    private String name;
-    private int age;
-    private String sex;
+    private String courseName;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime createTime;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    private LocalDateTime modifyTime;
 
 }

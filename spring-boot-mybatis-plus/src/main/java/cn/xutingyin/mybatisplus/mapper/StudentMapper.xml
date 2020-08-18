@@ -5,16 +5,16 @@
         insert student(`id`,`name`,`age`,`sex`,`create_time`)
         values (#{id},#{name},#{age},#{sex},#{createTime})
     </insert>
-    <select id="listStudentScore" resultType="cn.xutingyin.mybatisplus.entity.StudentDto">
+    <select id="listStudentScore" resultType="cn.xutingyin.mybatisplus.dto.StudentDto">
           SELECT
             stu.id AS studentId,
             stu.`name` AS studentName,
-            sc.cource_id AS courseId,
+            sc.course_id AS courseId,
             sc.score as score,
-            c.`name` AS courseName
+            c.course_name AS courseName
         FROM
             student stu
             LEFT JOIN score sc ON stu.id = sc.student_id
-            LEFT JOIN course c ON sc.cource_id = c.id
+            LEFT JOIN course c ON sc.course_id = c.id
     </select>
 </mapper>

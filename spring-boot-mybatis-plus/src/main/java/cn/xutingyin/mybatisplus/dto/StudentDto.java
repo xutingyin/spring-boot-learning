@@ -1,4 +1,4 @@
-package cn.xutingyin.mybatisplus.entity;
+package cn.xutingyin.mybatisplus.dto;
 
 import java.math.BigDecimal;
 
