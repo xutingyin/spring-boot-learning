@@ -13,4 +13,5 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
+    #    打印输入Mybatis-plus的SQL语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
