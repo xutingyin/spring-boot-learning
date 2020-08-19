@@ -11,8 +11,7 @@ seata:
   enabled: true
   application-id: account-service
   tx-service-group: my_test_tx_group
-  #enable-auto-data-source-proxy: true
-  #use-jdk-proxy: false
+  enable-auto-data-source-proxy: true
   client:
     rm:
       async-commit-buffer-limit: 1000
@@ -76,8 +75,6 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 2000
-      username: ""
-      password: ""
   registry:
     type: file
     consul:
@@ -113,5 +110,3 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 2000
-      username: ""
-      password: ""

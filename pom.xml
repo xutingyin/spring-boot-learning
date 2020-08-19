@@ -14,8 +14,8 @@
 
     <modules>
         <module>spring-boot-hello</module>
-        <module>nacos-spring-demo</module>
         <module>spring-boot-seat-at</module>
+        <module>spring-base</module>
     </modules>
     <!--alibaba nexus-->
     <repositories>

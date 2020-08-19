@@ -60,7 +60,7 @@ seata:
     compressor: none
     enable-client-batch-send-request: true
   config:
-    type: zk
+    type: nacos
     consul:
       server-addr: 10.1.5.81:8500
     apollo:
@@ -77,10 +77,8 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 5000
-      username: ""
-      password: ""
   registry:
-    type: zk
+    type: nacos
     consul:
       cluster: default
       server-addr: 10.1.5.81:8500
@@ -114,5 +112,3 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 5000
-      username: ""
-      password: ""

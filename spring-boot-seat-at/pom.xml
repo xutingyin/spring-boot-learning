@@ -28,12 +28,11 @@
         <zkclient.version></zkclient.version>
     </properties>
     <dependencies>
-        <!--dubbo-->
         <!--dubbo依赖-->
         <dependency>
-            <groupId>com.alibaba</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>
-            <version>2.6.5</version>
+            <version>2.7.5</version>
             <exclusions>
                 <exclusion>
                     <artifactId>spring-context</artifactId>

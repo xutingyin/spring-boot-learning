@@ -76,8 +76,6 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 2000
-      username: ""
-      password: ""
   registry:
     type: file
     consul:
@@ -113,5 +111,3 @@ seata:
       server-addr: 10.1.5.81:2181
       session-timeout: 6000
       connect-timeout: 2000
-      username: ""
-      password: ""
