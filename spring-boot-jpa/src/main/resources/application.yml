@@ -1,0 +1,16 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mworld?useSSL=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialec: org.hibernate.dialect.MySQL5InnoDBDialect
+server:
+  port: 8080
