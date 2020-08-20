@@ -7,4 +7,16 @@
         <property name="age" value="22"/>
         <property name="sex" value="男"/>
     </bean>
+    <bean id="a" class="cn.xutingyin.entity.A" scope="singleton">
+        <!--        <constructor-arg name="b" ref="b"/>-->
+        <property name="b" ref="b"/>
+    </bean>
+    <bean id="b" class="cn.xutingyin.entity.B" scope="singleton">
+        <!--        <constructor-arg name="c" ref="c"/>-->
+        <property name="c" ref="c"/>
+    </bean>
+    <bean id="c" class="cn.xutingyin.entity.C" scope="singleton">
+        <!--        <constructor-arg name="a" ref="a"/>-->
+        <property name="a" ref="a"/>
+    </bean>
 </beans>

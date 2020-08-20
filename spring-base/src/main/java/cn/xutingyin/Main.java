@@ -1,12 +1,9 @@
 package cn.xutingyin;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
-import cn.xutingyin.config.MyConfig;
+import cn.xutingyin.entity.A;
 import cn.xutingyin.entity.Human;
 
 /**
@@ -28,14 +25,18 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
         Human human = context.getBean("human", Human.class);
         System.out.println(human);
+
+        A a = context.getBean("a", A.class);
+        System.out.println(a);
         // 基于配置类获取Bean
-        ApplicationContext context1 = new AnnotationConfigApplicationContext(MyConfig.class);
+        /*     ApplicationContext context1 = new AnnotationConfigApplicationContext(MyConfig.class);
         Human human2 = context1.getBean("human", Human.class);
         System.out.println(human2.getAudi());
         System.out.println(human2.getBmw());
         System.out.println(human2.getBenz());
-
-        ApplicationContext context2 = new FileSystemXmlApplicationContext();
-        ApplicationContext context3 = new AnnotationConfigWebApplicationContext();
+        
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(A.class);
+        A a = applicationContext.getBean("a", A.class);
+        System.out.println(a);*/
     }
 }
