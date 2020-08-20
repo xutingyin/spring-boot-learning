@@ -12,3 +12,19 @@ https://blog.csdn.net/dancheren/article/details/71373970
 ### 可靠异步发送消息[send(Message msg)]
 
 ### 单向发送消息[sendOneway(Message msg)]
+
+
+## 服务启动
+### 启动Server
+```shell script
+nohup sh bin/mqnamesrv &
+```
+### 启动Broker
+```shell script
+nohup sh bin/mqbroker -n localhost:9876 &
+```
+
+## WEB查询插件
+```yaml
+https://gitee.com/xutingyin/rocketmq-externals.git
+```
