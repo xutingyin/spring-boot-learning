@@ -17,6 +17,10 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
+            <!--
+            classpath:只会在target/classes路径中下查找文件
+            classpath* ：在所有的classpath下查找，包括jar中，会存在多个classpath的情况。
+            -->
             <param-value>classpath*:spring/springmvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
