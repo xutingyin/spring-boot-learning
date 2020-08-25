@@ -1,10 +1,11 @@
 package cn.xutingyin;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import cn.xutingyin.entity.A;
-import cn.xutingyin.entity.Human;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @description: Spring Bean主类测试,Spring为我们提供了丰富的应用上下文工具类：
@@ -22,12 +23,22 @@ public class Main {
 
     public static void main(String[] args) {
         // 基于XML 配置获取Bean
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
-        Human human = context.getBean("human", Human.class);
-        System.out.println(human);
-
-        A a = context.getBean("a", A.class);
-        System.out.println(a);
+        // ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        // Human human = context.getBean("human", Human.class);
+        // System.out.println(human);
+        //
+        // A a = context.getBean("a", A.class);
+        // System.out.println(a);
+        // System.out.println(Thread.currentThread().getContextClassLoader());
+        ClassPathResource resource = new ClassPathResource("spring.xml");
+        // BeanFactory factory = new XmlBeanFactory(resource); // XmlBeanFactory已过时，官方不推荐使用-- 替代的是如下的写法
+        BeanFactory factory1 = new DefaultListableBeanFactory();
+        BeanDefinitionReader bdr = new XmlBeanDefinitionReader((BeanDefinitionRegistry)factory1);
+        bdr.loadBeanDefinitions(resource);
+        // Human human = (Human)factory1.getBean(Human.class);
+        // System.out.println(human);
+        // Human human = (Human)factory.getBean("human");
+        // System.out.println(human);
         // 基于配置类获取Bean
         /*     ApplicationContext context1 = new AnnotationConfigApplicationContext(MyConfig.class);
         Human human2 = context1.getBean("human", Human.class);
