@@ -13,11 +13,12 @@ public class JmsConfig {
     /**
      * 消费者组
      */
-    public static final String PRODUCER_GROUP = "producer_group";
+    public static final String  PRODUCER_GROUP = "producer_group_oneway";
 
     public static final String TOPIC = "topic_family";
     public static final String TOPIC_SYNC = "topic_sysnc";
     public static final String TOPIC_ASYNC = "topic_async";
     public static final String TOPIC_ONEWAY = "topic_oneway";
     public static final String TOPIC_TRANS = "topic_trans";
+
 }

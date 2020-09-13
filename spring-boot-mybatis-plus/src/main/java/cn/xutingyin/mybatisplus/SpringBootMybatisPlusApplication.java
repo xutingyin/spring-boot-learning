@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@MapperScan("cn.xutingyin.mybatisplus.mapper")
+ @MapperScan("cn.xutingyin.mybatisplus.mapper")
 public class SpringBootMybatisPlusApplication {
 
     public static void main(String[] args) {
