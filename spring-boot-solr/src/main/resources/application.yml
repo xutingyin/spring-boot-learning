@@ -1,0 +1,6 @@
+spring:
+  data:
+    solr:
+      host: http://xutingyin.cn:8983/solr/
+solr:
+  core-name: book_core
