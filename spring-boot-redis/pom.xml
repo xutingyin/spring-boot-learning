@@ -62,7 +62,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.9</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <!--热部署工具，另外需要两步：1、在application.yml中开启devtools.restart.enable=true;2、IDEA 编译时勾选自动编译-->
