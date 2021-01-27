@@ -3,6 +3,7 @@ package cn.xutingyin.springdatajpa.entity;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Proxy;
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,12 +19,13 @@ import java.io.Serializable;
 @Table(name= "user")
 @Data
 @Proxy(lazy = false)
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid",strategy = "uuid")
-    private Long id;
+    @GeneratedValue(generator = "jpa-uuid")
+    @Column(length = 32)
+    private String id;
 
     private String name;
 

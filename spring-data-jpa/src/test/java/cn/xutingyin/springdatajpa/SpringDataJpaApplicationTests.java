@@ -24,6 +24,10 @@ class SpringDataJpaApplicationTests {
 
     @Test
     void getByCondition(){
+        User user = new User();
+        user.setName("赵武");
+        User save = userRepository.save(user);
+        System.out.println(save);
     }
 
 
