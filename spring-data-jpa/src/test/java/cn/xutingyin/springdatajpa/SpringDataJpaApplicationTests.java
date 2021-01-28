@@ -6,7 +6,10 @@ import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.domain.Specification;
 
+import javax.persistence.criteria.Predicate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +40,22 @@ class SpringDataJpaApplicationTests {
         System.out.println(users);
     }
 
+    @Test
+    void listByCondition(){
+        List<User> users = userRepository.findAll((Specification<User>) (root, query, cb) -> {
+            List<Predicate> predicates = new ArrayList<>();
+            predicates.add(cb.like(root.get("name"), "李"));
+            return cb.and(predicates.toArray(new Predicate[predicates.size()]));
+        });
+        System.out.println(users);
+    }
 
-
+    @Test
+    void findByNameLike(){
+        String name = "李";
+        List<User> users = userRepository.findByNameLike(name);
+//        List<User> users2 = userRepository.findByNameLike2(name);
+        System.out.println(users);
+//        System.out.println(users2);
+    }
 }
