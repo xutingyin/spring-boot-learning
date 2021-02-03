@@ -2,11 +2,11 @@
 spring:
   application:
     name: spring-data-jpa
-# 数据库配置
+  # 数据库配置
   datasource:
-    url: jdbc:mysql://192.168.32.32:3306/teach?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.101.100:3306/teach?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-    password: mysqlLan2vWfdstv8
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
