@@ -31,5 +31,7 @@ public class UserController {
         // List<User> users = userMapper.listUserByPage(1, 3);
         users.forEach(System.out::println);
         // users2.forEach(System.out::println);
+        Integer i = 0;
+        int j = 0;
     }
 }
