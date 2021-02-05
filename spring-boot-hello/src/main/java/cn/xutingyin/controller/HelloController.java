@@ -1,10 +1,14 @@
 package cn.xutingyin.controller;
 
+import cn.xutingyin.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.xutingyin.config.PropertyConfig;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /** 
 * @Description: Hello 前端控制器
@@ -19,11 +23,14 @@ public class HelloController {
 
     private long num;
     @GetMapping("/hello")
-    public String sayHello(){
-        String message = "Hello , Spring boot 2.0 !";
-        String name = propertyConfig.getName();
-        num = num +1;
-        return message.concat("--").concat(name).concat("--").concat(String.valueOf(num));
+    public List<User> sayHello(){
+        User u = new User();
+        u.setAge(20);
+        u.setName("susan");
+        List<User> list= new ArrayList<>();
+        list.add(u);
+        list.add(u);
+        list.add(u);
+        return list;
     }
-
 }
