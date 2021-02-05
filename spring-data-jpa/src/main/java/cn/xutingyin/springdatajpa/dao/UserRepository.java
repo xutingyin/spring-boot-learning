@@ -1,13 +1,12 @@
 package cn.xutingyin.springdatajpa.dao;
 
-import java.util.List;
-
+import cn.xutingyin.springdatajpa.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import cn.xutingyin.springdatajpa.entity.User;
+import java.util.List;
 
 /**
  * 自定义的Repository继承PagingAndSortingRepository，PagingAndSortingRepository继承了CRUDRepository
