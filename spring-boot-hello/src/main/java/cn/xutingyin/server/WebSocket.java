@@ -13,9 +13,14 @@ import javax.websocket.server.ServerEndpoint;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @Description: 设置访问的URL
+ * @Author: xuty
+ * @CreateDate: 2021/5/23 11:46
+ * 
+ */
 @Component
 @ServerEndpoint("/websocket/{shopId}")
-// 此注解相当于设置访问URL
 public class WebSocket {
 
     private Session session;
