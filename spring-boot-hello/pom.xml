@@ -28,6 +28,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+        <!--netty-websocket-->
+        <!--   <dependency>
+               <groupId>org.yeauty</groupId>
+               <artifactId>netty-websocket-spring-boot-starter</artifactId>
+               <version>0.11.0</version>
+           </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,6 +50,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.60</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
