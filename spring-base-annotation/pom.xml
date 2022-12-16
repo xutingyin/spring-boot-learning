@@ -11,7 +11,7 @@
     <artifactId>spring-base-annotation</artifactId>
     <packaging>war</packaging>
     <properties>
-        <spring.springframework.version>5.2.7.RELEASE</spring.springframework.version>
+        <spring.springframework.version>5.2.20.RELEASE</spring.springframework.version>
     </properties>
     <dependencies>
         <dependency>
